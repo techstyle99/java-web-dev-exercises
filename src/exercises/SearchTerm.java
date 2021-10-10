@@ -3,24 +3,32 @@ import java.util.Scanner;
 
 public class SearchTerm {
     public static void main (String[] args) {
-        String sentence = "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, 'and what is the use of a book,' thought Alice 'without pictures or conversation?'";
+        String sentence =
+                "Alice was beginning to get very tired of sitting by her sister " +
+                "on the bank, and of having nothing to do: once or twice she had peeped into " +
+                "the book her sister was reading, but it had no pictures or conversations in it, " +
+                "'and what is the use of a book,' thought Alice 'without pictures or conversation?'";
+
         Scanner input = new Scanner(System.in);
-        System.out.println("enter a term to search for within this sentence: ");
+        System.out.println("enter a term to search: ");
         String term = input.nextLine().toLowerCase();
-        if (sentence.contains(term)){
+        input.close();
+        if (sentence.toLowerCase().contains(term)){
             System.out.println(true);
             Integer index = sentence.indexOf(term);
             Integer length = term.length();
-            System.out.println("your search term is: " + term);
-            System.out.println("your search term first appears at index: " + index + ". The length of your term is: " + length);
+            System.out.println("your search term: " + term);
+            System.out.println("search term first appears at index: " + index);
             String newSentence = sentence.replace(term, "");
             System.out.println(newSentence);
+
+            String subStr = sentence.substring(index, index+length);
+            System.out.println("sub string: " + subStr);
+            System.out.println(sentence.replace(subStr, ""));
+
         } else {
             System.out.println(false);
         }
-
-
-
     }
 
 }
