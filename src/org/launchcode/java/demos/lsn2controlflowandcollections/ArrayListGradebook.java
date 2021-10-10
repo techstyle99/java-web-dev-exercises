@@ -8,6 +8,10 @@ public class ArrayListGradebook {
     public static void main(String[] args) {
 
         ArrayList<String> students = new ArrayList<>();
+        // all values stored in collections must be objects i.e. use of class wrapper Double rather primitive double
+        // right: call ArrayList constructor, initialize list by creating a new empty list;
+        // type implicit from left side i.e. Double;
+        // left: template, right: real value
         ArrayList<Double> grades = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         String newStudent;

@@ -69,8 +69,10 @@ public class Car {
      *
      * @param miles - the miles to drive
      */
-    public void drive(double miles)
-    {
+    public void drive(double miles) throws IllegalAccessException {
+        if (miles <= 0.0){
+            throw new IllegalAccessException("Miles driven must be positive integer");
+        }
         //adjust fuel based on mpg and miles requested to drive
         double maxDistance = this.milesPerGallon * this.gasTankLevel;
         /**the double below uses some syntax called the ternary operator.

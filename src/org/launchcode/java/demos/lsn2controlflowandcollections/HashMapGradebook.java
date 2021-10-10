@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class HashMapGradebook {
 
     public static void main(String[] args) {
-
+        // define data types for this map's key, value pair;
+        // call HashMap constructor on the right side of the assignment (no need to specify datatype again)
         HashMap<String, Double> students = new HashMap<>();
         Scanner input = new Scanner(System.in);
         String newStudent;
@@ -30,17 +31,19 @@ public class HashMapGradebook {
             }
 
         } while(!newStudent.equals(""));
+        System.out.println(students);
 
-        // Print class roster
-        System.out.println("\nClass roster:");
-        double sum = 0.0;
-
-        for (Map.Entry<String, Double> student : students.entrySet()) {
-            System.out.println(student.getKey() + " (" + student.getValue() + ")");
-            sum += student.getValue();
-        }
-
-        double avg = sum / students.size();
-        System.out.println("Average grade: " + avg);
+//        // Print class roster
+//        System.out.println("\nClass roster:");
+//        double sum = 0.0;
+//        // iterator variable: student
+//        // Map.Entry class: represent key, value pairs within HashMap i.e. students
+//        // Map.Entry object: has getKey() / getValue() method representing key, value of map item
+//        for (Map.Entry<String, Double> student : students.entrySet()) {
+//            System.out.println(student.getKey() + " (" + student.getValue() + ")");
+//            sum += student.getValue();
+//        }
+//        double avg = sum / students.size();
+//        System.out.println("Average grade: " + avg);
     }
 }
